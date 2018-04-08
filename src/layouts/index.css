@@ -62,6 +62,10 @@ h1 {
   font-size: 2em;
   margin: .67em 0;
 }
+h1, h2, h3 {
+  font-family: 'Josefin Sans';
+  color: #222;
+}
 mark {
   background-color: #ff0;
   color: #000;

@@ -1,0 +1,125 @@
+:root {
+  --grid-columns: 2;
+}
+
+h1, h2, h3 {
+  font-family: 'Josefin Sans';
+  color: #222;
+}
+
+.bookList {
+  margin: 10em auto 7em;
+  position: relative;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-gap: 4rem;
+}
+
+.bookListItem {
+  list-style: none;
+}
+
+.bookListItem:nth-child(2) {
+  margin-top: 10rem;
+  margin-bottom: -4rem;
+}
+
+.bookCoverContainer {
+  position: relative;
+  max-width: 250px;
+  margin: 0 0 0 60px;
+  display: block;
+  transition-duration: 0.5s;
+}
+
+.bookCoverContainer:hover {
+  filter: drop-shadow(-20px -20px 0 red)
+}
+
+.bookCoverContainer::before {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 35px;
+    height: 375px;
+    z-index: -1;
+    content: "";
+    background: linear-gradient( #923fff, #ee62ff);
+    transform: skewY(20deg);
+    transform-origin: left 0;
+    transition-duration: 0.5s;
+}
+
+.bookCoverContainer::after {
+    position: absolute;
+    top: 377px;
+    right: 0;
+    width: 100%;
+    height: 11px;
+    z-index: -1;
+    content: "";
+    background: linear-gradient(to right,#923fff, #ee62ff);
+    transform: skewX(70deg);
+    transform-origin: 0 0;
+    transition-duration: 0.5s;
+}
+
+.book {
+  height: 500px;
+  position: relative;
+}
+
+.book::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 400px;
+  background: #f5e9fd;
+  position: absolute;
+  top: 3rem;
+  z-index: -1;
+}
+
+.book h2 {
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  line-height: 1.5;
+}
+
+/* Stars */
+.stars {
+  font-size: 2rem;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+}
+
+.stars::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 1rem);
+  top: -0.5rem;
+  right: 0;
+  background: white;
+}
+
+.stars.three::after {
+ width: 40%;
+}
+.stars.threeHalf::after {
+ width: 30%;
+}
+.stars.four::after {
+ width: 20%;
+}
+.stars.fourHalf::after {
+ width: 10%;
+}
+.stars.five::after {
+ width: 0;
+}
