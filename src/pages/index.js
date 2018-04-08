@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Book from '../components/Book';
 import Overdrive from 'react-overdrive'
 import bender from "../media/bender.jpg";
 

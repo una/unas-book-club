@@ -1,0 +1,64 @@
+:root {
+  --book-bg: white;
+  --book-shadow-color: #e4e1e1;
+}
+
+.Book {
+  display: grid;
+  grid-template:
+    "🖼 😄" 3fr
+		"🖼 📖" 1fr
+		"🔗 🔗" auto /
+		150px 150px;
+  grid-gap: 1rem;
+  width: 100%;
+  align-self: stretch;
+  background-color: var(--book-bg);
+  box-shadow: 0 0 4px var(--book-shadow-color);
+  padding: 1em;
+}
+
+.Book_Link {
+  grid-area: 😄;
+  margin-top: .5em;
+  z-index: 1;
+  line-height: 1.4;
+}
+
+.Book_Title {
+  text-decoration: none;
+  margin-left: -1em;
+  z-index: 1;
+  background: black;
+  color: white;
+  border: 3px solid black;
+  display: inline;
+  font-size: 1.4em;
+}
+
+.Book_Cover {
+  grid-area: 🖼;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Book_Info {
+	grid-area: 📖;
+}
+
+.Book_Length::after {
+  content: ' pages';
+}
+
+.Book_Links {
+  grid-area: 🔗;
+  display: inline-flex;
+}
+
+.Book_Link--Audio {
+  background: lightblue;
+}
+
+.Book_Link--Text {
+  background: lightpink;
+}
